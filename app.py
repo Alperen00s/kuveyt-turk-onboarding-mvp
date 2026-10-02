@@ -48,52 +48,51 @@ st.markdown("""
     div[data-baseweb="select"] * { color: #333333 !important; background-color: transparent !important; }
     
     /*  BUTONLAR */
-    div[data-testid="stFormSubmitButton"] > button, 
-    div[data-testid="stButton"] > button,
-    button[kind="primary"], 
-    button[kind="secondary"] { 
-        background: linear-gradient(135deg, #006554 0%, #004C3F 100%) !important; 
-        color: #FFFFFF !important; 
+    
+    /* 1. FORM GÖNDERME BUTONLARI (İleri & Testi Tamamla) */
+    button[kind="primaryFormSubmit"] {
+        background: linear-gradient(135deg, #006554 0%, #004C3F 100%) !important;
         border: none !important;
-        border-bottom: 4px solid #D2A042 !important; 
-        width: 100% !important; 
-        border-radius: 8px !important; 
-        font-weight: 700 !important; 
-        padding: 14px !important; 
-        font-size: 17px !important; 
-        transition: all 0.2s ease !important; 
+        border-bottom: 4px solid #D2A042 !important;
+        border-radius: 8px !important;
+        padding: 10px 24px !important;
+        min-height: 50px !important;
+        width: 100% !important;
+        transition: all 0.2s ease !important;
         box-shadow: 0px 4px 10px rgba(0, 101, 84, 0.15) !important;
     }
-    
-    /* Buton İçindeki Yazıları Korumak İçin */
-    div[data-testid="stFormSubmitButton"] > button *, 
-    div[data-testid="stButton"] > button *,
-    button[kind="primary"] *, 
-    button[kind="secondary"] * {
-        color: #FFFFFF !important; 
-        font-size: 17px !important; 
-        font-weight: 600 !important;
+    button[kind="primaryFormSubmit"] p, 
+    button[kind="primaryFormSubmit"] div {
+        color: #FFFFFF !important;
+        font-weight: 700 !important;
+        font-size: 17px !important;
     }
-    
-    /* Hover (Üzerine Gelme) Animasyonları */
-    div[data-testid="stFormSubmitButton"] > button:hover, 
-    div[data-testid="stButton"] > button:hover,
-    button[kind="primary"]:hover, 
-    button[kind="secondary"]:hover { 
-        transform: translateY(2px) !important; 
-        border-bottom-width: 2px !important; 
-        box-shadow: 0px 5px 15px rgba(0,0,0,0.2) !important; 
+    button[kind="primaryFormSubmit"]:hover {
+        transform: translateY(2px) !important;
+        border-bottom-width: 2px !important;
+        box-shadow: 0px 2px 5px rgba(0,0,0,0.2) !important;
     }
-    
-    /* GERİ DÖN / TESTİ BAŞTAN ÇÖZ BUTONLARI (İkincil Beyaz Butonlar İçin Özel Sınıf) */
-    div[data-testid="stButton"] > button { 
-        background: #FFFFFF !important; 
-        background-image: none !important;
-        border: 2px solid #E0E0E0 !important; 
-        border-bottom: 4px solid #006554 !important; 
+
+    /* 2. NORMAL BUTONLAR (Geri Dön & Baştan Çöz) */
+    button[kind="secondary"] {
+        background: #FFFFFF !important;
+        border: 2px solid #E0E0E0 !important;
+        border-bottom: 4px solid #006554 !important;
+        border-radius: 8px !important;
+        padding: 10px 24px !important;
+        min-height: 50px !important;
+        width: 100% !important;
+        transition: all 0.2s ease !important;
     }
-    div[data-testid="stButton"] > button * { 
-        color: #006554 !important; 
+    button[kind="secondary"] p, 
+    button[kind="secondary"] div {
+        color: #006554 !important;
+        font-weight: 700 !important;
+        font-size: 17px !important;
+    }
+    button[kind="secondary"]:hover {
+        transform: translateY(2px) !important;
+        border-bottom-width: 2px !important;
     }
     
     /* SEÇENEKLER VE KARTLAR */
