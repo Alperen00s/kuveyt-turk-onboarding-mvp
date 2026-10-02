@@ -49,28 +49,30 @@ st.markdown("""
     
     /*  BUTONLAR */
     
-    /* 1. FORM GÖNDERME BUTONLARI (İleri & Testi Tamamla) */
-    button[kind="primaryFormSubmit"] {
-        background: linear-gradient(135deg, #006554 0%, #004C3F 100%) !important;
-        border: none !important;
-        border-bottom: 4px solid #D2A042 !important;
-        border-radius: 8px !important;
-        padding: 10px 24px !important;
-        min-height: 50px !important;
-        width: 100% !important;
-        transition: all 0.2s ease !important;
-        box-shadow: 0px 4px 10px rgba(0, 101, 84, 0.15) !important;
+    /* Select kutusunun dış çerçevesi ve arka planı */
+    div[data-testid="stSelectbox"] div[data-baseweb="select"] > div,
+    div[data-baseweb="select"] > div { 
+        background-color: #FAFAFA !important; 
+        border: 1px solid #C4C4C4 !important; /* Silikliği gidermek için çerçeveyi belirginleştirdik */
+        border-radius: 8px !important; 
+        padding: 4px !important; 
+        transition: all 0.2s !important; 
+        box-shadow: 0px 2px 5px rgba(0,0,0,0.02) !important;
     }
-    button[kind="primaryFormSubmit"] p, 
-    button[kind="primaryFormSubmit"] div {
-        color: #FFFFFF !important;
-        font-weight: 700 !important;
-        font-size: 17px !important;
+    
+    /* Üzerine gelince (Hover) Kuveyt Türk altın sarısı parlaması */
+    div[data-testid="stSelectbox"] div[data-baseweb="select"] > div:hover,
+    div[data-baseweb="select"] > div:hover { 
+        border-color: #D2A042 !important; 
+        box-shadow: 0px 0px 6px rgba(210, 160, 66, 0.3) !important; 
     }
-    button[kind="primaryFormSubmit"]:hover {
-        transform: translateY(2px) !important;
-        border-bottom-width: 2px !important;
-        box-shadow: 0px 2px 5px rgba(0,0,0,0.2) !important;
+    
+    /* Kutu içindeki yazıların daha net ve koyu görünmesi */
+    div[data-testid="stSelectbox"] div[data-baseweb="select"] *,
+    div[data-baseweb="select"] * { 
+        color: #222222 !important; 
+        background-color: transparent !important;
+        font-weight: 500 !important;
     }
 
     /* 2. NORMAL BUTONLAR (Geri Dön & Baştan Çöz) */
