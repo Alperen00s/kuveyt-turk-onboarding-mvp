@@ -48,26 +48,53 @@ st.markdown("""
     div[data-baseweb="select"] * { color: #333333 !important; background-color: transparent !important; }
     
     /*  BUTONLAR */
-    .stButton > button { 
+    div[data-testid="stFormSubmitButton"] > button, 
+    div[data-testid="stButton"] > button,
+    button[kind="primary"], 
+    button[kind="secondary"] { 
         background: linear-gradient(135deg, #006554 0%, #004C3F 100%) !important; 
         color: #FFFFFF !important; 
-        border: none; 
+        border: none !important;
         border-bottom: 4px solid #D2A042 !important; 
-        width: 100%; 
-        border-radius: 8px; 
-        font-weight: 700; 
-        padding: 14px; 
-        font-size: 17px; 
-        transition: all 0.2s ease; 
-        position: relative;
-        z-index: 100;
+        width: 100% !important; 
+        border-radius: 8px !important; 
+        font-weight: 700 !important; 
+        padding: 14px !important; 
+        font-size: 17px !important; 
+        transition: all 0.2s ease !important; 
+        box-shadow: 0px 4px 10px rgba(0, 101, 84, 0.15) !important;
     }
-    .stButton > button p { color: #FFFFFF !important; font-size: 17px; font-weight: 600;}
-    .stButton > button:hover { transform: translateY(2px); border-bottom-width: 2px !important; box-shadow: 0px 5px 15px rgba(0,0,0,0.2); }
-    .stButton > button:active { transform: translateY(4px); border-bottom-width: 0px !important; }
     
-    .stButton > button:nth-child(1) { background: #FFFFFF !important; color: #006554 !important; border: 2px solid #E0E0E0 !important; border-bottom: 4px solid #006554 !important; }
-    .stButton > button:nth-child(1) p { color: #006554 !important; }
+    /* Buton İçindeki Yazıları Korumak İçin */
+    div[data-testid="stFormSubmitButton"] > button *, 
+    div[data-testid="stButton"] > button *,
+    button[kind="primary"] *, 
+    button[kind="secondary"] * {
+        color: #FFFFFF !important; 
+        font-size: 17px !important; 
+        font-weight: 600 !important;
+    }
+    
+    /* Hover (Üzerine Gelme) Animasyonları */
+    div[data-testid="stFormSubmitButton"] > button:hover, 
+    div[data-testid="stButton"] > button:hover,
+    button[kind="primary"]:hover, 
+    button[kind="secondary"]:hover { 
+        transform: translateY(2px) !important; 
+        border-bottom-width: 2px !important; 
+        box-shadow: 0px 5px 15px rgba(0,0,0,0.2) !important; 
+    }
+    
+    /* GERİ DÖN / TESTİ BAŞTAN ÇÖZ BUTONLARI (İkincil Beyaz Butonlar İçin Özel Sınıf) */
+    div[data-testid="stButton"] > button { 
+        background: #FFFFFF !important; 
+        background-image: none !important;
+        border: 2px solid #E0E0E0 !important; 
+        border-bottom: 4px solid #006554 !important; 
+    }
+    div[data-testid="stButton"] > button * { 
+        color: #006554 !important; 
+    }
     
     /* SEÇENEKLER VE KARTLAR */
     div[role="radiogroup"] > label { background-color: #FFFFFF !important; padding: 18px; border-radius: 8px; margin-bottom: 10px; border: 1px solid #EAEAEA !important; border-left: 4px solid #EAEAEA !important; transition: all 0.2s ease-in-out; position: relative; z-index: 10;}
