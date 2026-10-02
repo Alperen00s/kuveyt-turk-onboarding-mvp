@@ -53,7 +53,7 @@ st.markdown("""
     div[data-testid="stSelectbox"] div[data-baseweb="select"] > div,
     div[data-baseweb="select"] > div { 
         background-color: #FAFAFA !important; 
-        border: 1px solid #C4C4C4 !important; /* Silikliği gidermek için çerçeveyi belirginleştirdik */
+        border: 5px solid #C4C4C4 !important; 
         border-radius: 8px !important; 
         padding: 4px !important; 
         transition: all 0.2s !important; 
