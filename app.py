@@ -96,9 +96,42 @@ st.markdown("""
     }
     
     /* SEÇENEKLER VE KARTLAR */
-    div[role="radiogroup"] > label { background-color: #FFFFFF !important; padding: 18px; border-radius: 8px; margin-bottom: 10px; border: 1px solid #EAEAEA !important; border-left: 4px solid #EAEAEA !important; transition: all 0.2s ease-in-out; position: relative; z-index: 10;}
-    div[role="radiogroup"] > label p { color: #444444 !important; font-weight: 500;}
-    div[role="radiogroup"] > label:hover { border-color: #EAEAEA !important; border-left: 4px solid #D2A042 !important; background-color: #FDFBF7 !important; transform: translateX(3px); }
+    
+    /* Radio butonların her bir şıkkını kutu (kart) içine alır */
+    div.stRadio > div[role="radiogroup"] > label,
+    div[data-testid="stRadio"] > div > label,
+    .stRadio label { 
+        background-color: #FFFFFF !important; 
+        padding: 18px !important; 
+        border-radius: 8px !important; 
+        margin-bottom: 10px !important; 
+        border: 1px solid #EAEAEA !important; 
+        border-left: 4px solid #EAEAEA !important; 
+        transition: all 0.2s ease-in-out !important; 
+        position: relative !important; 
+        z-index: 10 !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+    
+    /* Seçenek yazılarının rengi ve boyutu */
+    div.stRadio > div[role="radiogroup"] > label *,
+    div[data-testid="stRadio"] > div > label *,
+    .stRadio label * { 
+        color: #444444 !important; 
+        font-weight: 500 !important;
+        cursor: pointer !important;
+    }
+    
+    /* Üzerine gelince (Hover) oluşan animasyon ve altın rengi efekt */
+    div.stRadio > div[role="radiogroup"] > label:hover,
+    div[data-testid="stRadio"] > div > label:hover,
+    .stRadio label:hover { 
+        border-color: #EAEAEA !important; 
+        border-left: 4px solid #D2A042 !important; 
+        background-color: #FDFBF7 !important; 
+        transform: translateX(3px) !important; 
+    }
     
     /* Uyarı Mesajları */
     .stAlert { background-color: #FDFBF7 !important; border-left: 4px solid #D2A042 !important; border-radius: 6px; box-shadow: 0px 2px 10px rgba(0,0,0,0.03);}
