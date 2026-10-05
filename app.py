@@ -91,52 +91,51 @@ st.markdown("""
     }
     
     /* ========================================= */
-    /* KESİN ÇÖZÜM: AÇILIR MENÜLER (SELECTBOX)   */
+    /* CLOUD İÇİN NÜKLEER ÇÖZÜM (YÜKSEK SPESİFİKLİK) */
     /* ========================================= */
-    div[data-testid="stSelectbox"] div[data-baseweb="select"] { 
-        background-color: #FAFAFA !important; 
-        border: 1px solid #C4C4C4 !important; 
-        border-radius: 8px !important; 
-        box-shadow: 0px 2px 5px rgba(0,0,0,0.02) !important;
+    
+    /* 1. KESİN ÇÖZÜM: SELECTBOX (AÇILIR MENÜ) */
+    html body div[data-testid="stSelectbox"] div[data-baseweb="select"] {
+        background-color: #FAFAFA !important;
+        border: 2px solid #C4C4C4 !important;
+        border-radius: 8px !important;
+        box-shadow: 0px 2px 5px rgba(0,0,0,0.05) !important;
     }
-    div[data-testid="stSelectbox"] div[data-baseweb="select"]:hover { 
-        border-color: #D2A042 !important; 
-        box-shadow: 0px 0px 6px rgba(210, 160, 66, 0.3) !important; 
+    html body div[data-testid="stSelectbox"] div[data-baseweb="select"]:hover {
+        border-color: #D2A042 !important;
     }
-    div[data-testid="stSelectbox"] div[data-baseweb="select"] > div {
+    /* Selectbox içindeki yazılar */
+    html body div[data-testid="stSelectbox"] div[data-baseweb="select"] * {
+        color: #222222 !important;
         background-color: transparent !important;
-        border: none !important;
-    }
-    div[data-testid="stSelectbox"] div[data-baseweb="select"] * { 
-        color: #222222 !important; 
         font-weight: 500 !important;
     }
     
-    /* ========================================= */
-    /* KESİN ÇÖZÜM: KART SEÇENEKLERİ (RADIO)     */
-    /* ========================================= */
-    div[data-testid="stRadio"] div[role="radiogroup"] label { 
-        background-color: #FFFFFF !important; 
-        padding: 16px 20px !important; 
-        border-radius: 8px !important; 
-        margin-bottom: 12px !important; 
-        border: 1px solid #EAEAEA !important; 
-        border-left: 4px solid #EAEAEA !important; 
-        transition: all 0.2s ease-in-out !important; 
-        width: 100% !important;
+    /* 2. KESİN ÇÖZÜM: RADIO (SEÇENEK KARTLARI) */
+    html body div[data-testid="stRadio"] label {
+        background-color: #FFFFFF !important;
+        border: 1px solid #EAEAEA !important;
+        border-left: 5px solid #006554 !important; /* Belirgin Kuveyt Yeşili Çizgi */
+        border-radius: 8px !important;
+        padding: 16px !important;
+        margin-bottom: 12px !important;
         display: flex !important;
         align-items: center !important;
+        width: 100% !important;
+        box-shadow: 0px 2px 6px rgba(0,0,0,0.04) !important;
+        transition: all 0.2s ease !important;
     }
-    div[data-testid="stRadio"] div[role="radiogroup"] label * {
-        color: #444444 !important; 
+    html body div[data-testid="stRadio"] label:hover {
+        border-left: 5px solid #D2A042 !important; /* Hover'da Altın Sarısı */
+        background-color: #FDFBF7 !important;
+        transform: translateX(4px) !important;
+    }
+    /* Kartların içindeki seçenek yazıları */
+    html body div[data-testid="stRadio"] label * {
+        color: #333333 !important;
+        font-size: 15px !important;
         font-weight: 500 !important;
         cursor: pointer !important;
-    }
-    div[data-testid="stRadio"] div[role="radiogroup"] label:hover { 
-        border-color: #EAEAEA !important; 
-        border-left: 4px solid #D2A042 !important; 
-        background-color: #FDFBF7 !important; 
-        transform: translateX(3px) !important; 
     }
     
     /* Uyarı Mesajları */
