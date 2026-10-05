@@ -219,10 +219,10 @@ if st.session_state.step == 1:
         st.info("Lütfen 100.000 TL'lik bir yatırım yaptığınızı varsayarak sizin için en uygun senaryoyu seçiniz:")
         
         st.radio(" ", [
-            "1. 100.000 TL anaparamdan hiç kayıp yaşamak istemem. Getirim düşük kalsa bile Kira Sertifikası/Katılma Hesabı ile ilerlerim.",
-            "2. 100.000 TL yatırımımda maksimum 5.000 TL'ye kadar (%5) geçici düşüşlere dayanabilirim. Temkinli fonları tercih ederim.",
+            "1. 100.000 TL anaparamdan hiç kayıp yaşamak istemem. Getirim düşük kalsa bile risksiz varlıklar ile ilerlerim.",
+            "2. 100.000 TL yatırımımda maksimum 5.000 TL'ye kadar (%5) geçici düşüşlere dayanabilirim. Temkinli varlıkları tercih ederim.",
             "3. 100.000 TL yatırımımda uzun vadede 15.000 TL - 20.000 TL (%15-%20) dalgalanmaları normal karşılar, orta riskli ürünlerde beklerim.",
-            "4. Yüksek getiri uğruna 100.000 TL yatırımımın 30.000 TL - 40.000 TL (%30-%40) erimesini göğüsleyebilirim. Agresif hisse fonlarına yatırım yaparım.",
+            "4. Yüksek getiri uğruna 100.000 TL yatırımımın 30.000 TL - 40.000 TL (%30-%40) erimesini göğüsleyebilirim. Agresif varlıklara yatırım yaparım.",
             "5. Çok yüksek getiri için 100.000 TL'nin tamamını kaybetme riskini alır, kompleks katılım ürünlerinde işlem yaparım."
         ], key="risk_tercihi", index=None, label_visibility="collapsed")
         
