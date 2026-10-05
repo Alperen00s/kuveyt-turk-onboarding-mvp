@@ -12,7 +12,7 @@ st.markdown("""
         font-family: 'Segoe UI', Arial, sans-serif; 
     }
     
-    /* LOGO FİLİGRANI */
+    /* LOGO */
     .stApp::after {
         content: "";
         position: fixed;
@@ -21,7 +21,7 @@ st.markdown("""
         background-repeat: no-repeat;
         background-position: center center;
         background-size: 650px;
-        opacity: 0.08; 
+        opacity: 0.10; 
         z-index: 9999; 
         pointer-events: none; 
     }
@@ -43,55 +43,7 @@ st.markdown("""
     }
     
     /* ========================================= */
-    /* DÜZELTİLMİŞ KESİN ÇÖZÜM: AÇILIR MENÜLER   */
-    /* ========================================= */
-    div[data-baseweb="select"] > div {
-        background-color: #FFFFFF !important;
-        border: 2px solid #EAEAEA !important;
-        border-radius: 8px !important;
-        box-shadow: 0px 2px 6px rgba(0,0,0,0.02) !important;
-        padding-top: 2px !important;
-        padding-bottom: 2px !important;
-        transition: all 0.2s ease !important;
-    }
-    div[data-baseweb="select"] > div:hover {
-        border-color: #D2A042 !important;
-        box-shadow: 0px 2px 8px rgba(210, 160, 66, 0.15) !important;
-    }
-    div[data-baseweb="select"] * {
-        color: #333333 !important;
-        font-weight: 500 !important;
-    }
-
-    /* ========================================= */
-    /* DÜZELTİLMİŞ KESİN ÇÖZÜM: KART SEÇENEKLERİ */
-    /* ========================================= */
-    div[role="radiogroup"] > label {
-        background-color: #FFFFFF !important;
-        border: 1px solid #EAEAEA !important;
-        border-left: 5px solid #006554 !important; /* Kuveyt Yeşili Sol Çizgi */
-        border-radius: 8px !important;
-        padding: 16px 20px !important;
-        margin-bottom: 12px !important;
-        display: flex !important;
-        align-items: center !important;
-        box-shadow: 0px 2px 6px rgba(0,0,0,0.03) !important;
-        transition: all 0.2s ease !important;
-        width: 100% !important;
-    }
-    div[role="radiogroup"] > label:hover {
-        border-left: 5px solid #D2A042 !important; /* Hover'da Altın Sarısı */
-        background-color: #FDFBF7 !important;
-        transform: translateX(4px) !important;
-    }
-    div[role="radiogroup"] > label * {
-        color: #333333 !important;
-        font-weight: 500 !important;
-        cursor: pointer !important;
-    }
-
-    /* ========================================= */
-    /* BUTONLAR (İleri, Geri, Tamamla)           */
+    /* KESİN ÇÖZÜM: FORM BUTONLARI (İleri & Tamamla) */
     /* ========================================= */
     button[kind="primaryFormSubmit"] {
         background: linear-gradient(135deg, #006554 0%, #004C3F 100%) !important;
@@ -104,7 +56,8 @@ st.markdown("""
         transition: all 0.2s ease !important;
         box-shadow: 0px 4px 10px rgba(0, 101, 84, 0.15) !important;
     }
-    button[kind="primaryFormSubmit"] * {
+    button[kind="primaryFormSubmit"] p, 
+    button[kind="primaryFormSubmit"] div {
         color: #FFFFFF !important;
         font-weight: 700 !important;
         font-size: 17px !important;
@@ -115,6 +68,7 @@ st.markdown("""
         box-shadow: 0px 2px 5px rgba(0,0,0,0.2) !important;
     }
     
+    /* 2. NORMAL BUTONLAR (Geri Dön & Baştan Çöz) */
     button[kind="secondary"] {
         background: #FFFFFF !important;
         border: 2px solid #E0E0E0 !important;
@@ -125,7 +79,8 @@ st.markdown("""
         width: 100% !important;
         transition: all 0.2s ease !important;
     }
-    button[kind="secondary"] * {
+    button[kind="secondary"] p, 
+    button[kind="secondary"] div {
         color: #006554 !important;
         font-weight: 700 !important;
         font-size: 17px !important;
@@ -135,7 +90,55 @@ st.markdown("""
         border-bottom-width: 2px !important;
     }
     
-    /* Uyarı ve Bilgi Mesajları */
+    /* ========================================= */
+    /* CLOUD İÇİN NÜKLEER ÇÖZÜM (YÜKSEK SPESİFİKLİK) */
+    /* ========================================= */
+    
+    /* 1. KESİN ÇÖZÜM: SELECTBOX (AÇILIR MENÜ) */
+    html body div[data-testid="stSelectbox"] div[data-baseweb="select"] {
+        background-color: #FAFAFA !important;
+        border: 2px solid #C4C4C4 !important;
+        border-radius: 8px !important;
+        box-shadow: 0px 2px 5px rgba(0,0,0,0.05) !important;
+    }
+    html body div[data-testid="stSelectbox"] div[data-baseweb="select"]:hover {
+        border-color: #D2A042 !important;
+    }
+    /* Selectbox içindeki yazılar */
+    html body div[data-testid="stSelectbox"] div[data-baseweb="select"] * {
+        color: #222222 !important;
+        background-color: transparent !important;
+        font-weight: 500 !important;
+    }
+    
+    /* 2. KESİN ÇÖZÜM: RADIO (SEÇENEK KARTLARI) */
+    html body div[data-testid="stRadio"] label {
+        background-color: #FFFFFF !important;
+        border: 1px solid #EAEAEA !important;
+        border-left: 5px solid #006554 !important; /* Belirgin Kuveyt Yeşili Çizgi */
+        border-radius: 8px !important;
+        padding: 16px !important;
+        margin-bottom: 12px !important;
+        display: flex !important;
+        align-items: center !important;
+        width: 100% !important;
+        box-shadow: 0px 2px 6px rgba(0,0,0,0.04) !important;
+        transition: all 0.2s ease !important;
+    }
+    html body div[data-testid="stRadio"] label:hover {
+        border-left: 5px solid #D2A042 !important; /* Hover'da Altın Sarısı */
+        background-color: #FDFBF7 !important;
+        transform: translateX(4px) !important;
+    }
+    /* Kartların içindeki seçenek yazıları */
+    html body div[data-testid="stRadio"] label * {
+        color: #333333 !important;
+        font-size: 15px !important;
+        font-weight: 500 !important;
+        cursor: pointer !important;
+    }
+    
+    /* Uyarı Mesajları */
     .stAlert { background-color: #FDFBF7 !important; border-left: 4px solid #D2A042 !important; border-radius: 6px; box-shadow: 0px 2px 10px rgba(0,0,0,0.03);}
     div[data-testid="stAlert"]:has(svg[aria-label="error icon"]) { background-color: #FFF3F3 !important; border-left: 4px solid #DC3545 !important; }
     
