@@ -42,39 +42,32 @@ st.markdown("""
         z-index: 10;
     }
     
-    /* İnput ve Select Alanları */
-    div[data-baseweb="select"] > div { background-color: #FAFAFA !important; color: #333333 !important; border: 1px solid #E0E0E0 !important; border-radius: 8px !important; padding: 6px; transition: all 0.2s; }
-    div[data-baseweb="select"] > div:hover { border-color: #D2A042 !important; box-shadow: 0px 0px 5px rgba(210, 160, 66, 0.2) !important; }
-    div[data-baseweb="select"] * { color: #333333 !important; background-color: transparent !important; }
-    
-    /*  BUTONLAR */
-    
-    /* Select kutusunun dış çerçevesi ve arka planı */
-    div[data-testid="stSelectbox"] div[data-baseweb="select"] > div,
-    div[data-baseweb="select"] > div { 
-        background-color: #FAFAFA !important; 
-        border: 5px solid #C4C4C4 !important; 
-        border-radius: 8px !important; 
-        padding: 4px !important; 
-        transition: all 0.2s !important; 
-        box-shadow: 0px 2px 5px rgba(0,0,0,0.02) !important;
+    /* ========================================= */
+    /* KESİN ÇÖZÜM: FORM BUTONLARI (İleri & Tamamla) */
+    /* ========================================= */
+    button[kind="primaryFormSubmit"] {
+        background: linear-gradient(135deg, #006554 0%, #004C3F 100%) !important;
+        border: none !important;
+        border-bottom: 4px solid #D2A042 !important;
+        border-radius: 8px !important;
+        padding: 10px 24px !important;
+        min-height: 50px !important;
+        width: 100% !important;
+        transition: all 0.2s ease !important;
+        box-shadow: 0px 4px 10px rgba(0, 101, 84, 0.15) !important;
+    }
+    button[kind="primaryFormSubmit"] p, 
+    button[kind="primaryFormSubmit"] div {
+        color: #FFFFFF !important;
+        font-weight: 700 !important;
+        font-size: 17px !important;
+    }
+    button[kind="primaryFormSubmit"]:hover {
+        transform: translateY(2px) !important;
+        border-bottom-width: 2px !important;
+        box-shadow: 0px 2px 5px rgba(0,0,0,0.2) !important;
     }
     
-    /* Üzerine gelince (Hover) Kuveyt Türk altın sarısı parlaması */
-    div[data-testid="stSelectbox"] div[data-baseweb="select"] > div:hover,
-    div[data-baseweb="select"] > div:hover { 
-        border-color: #D2A042 !important; 
-        box-shadow: 0px 0px 6px rgba(210, 160, 66, 0.3) !important; 
-    }
-    
-    /* Kutu içindeki yazıların daha net ve koyu görünmesi */
-    div[data-testid="stSelectbox"] div[data-baseweb="select"] *,
-    div[data-baseweb="select"] * { 
-        color: #222222 !important; 
-        background-color: transparent !important;
-        font-weight: 500 !important;
-    }
-
     /* 2. NORMAL BUTONLAR (Geri Dön & Baştan Çöz) */
     button[kind="secondary"] {
         background: #FFFFFF !important;
@@ -97,38 +90,49 @@ st.markdown("""
         border-bottom-width: 2px !important;
     }
     
-    /* SEÇENEKLER VE KARTLAR */
-    
-    /* Radio butonların her bir şıkkını kutu (kart) içine alır */
-    div.stRadio > div[role="radiogroup"] > label,
-    div[data-testid="stRadio"] > div > label,
-    .stRadio label { 
-        background-color: #FFFFFF !important; 
-        padding: 18px !important; 
+    /* ========================================= */
+    /* KESİN ÇÖZÜM: AÇILIR MENÜLER (SELECTBOX)   */
+    /* ========================================= */
+    div[data-testid="stSelectbox"] div[data-baseweb="select"] { 
+        background-color: #FAFAFA !important; 
+        border: 1px solid #C4C4C4 !important; 
         border-radius: 8px !important; 
-        margin-bottom: 10px !important; 
+        box-shadow: 0px 2px 5px rgba(0,0,0,0.02) !important;
+    }
+    div[data-testid="stSelectbox"] div[data-baseweb="select"]:hover { 
+        border-color: #D2A042 !important; 
+        box-shadow: 0px 0px 6px rgba(210, 160, 66, 0.3) !important; 
+    }
+    div[data-testid="stSelectbox"] div[data-baseweb="select"] > div {
+        background-color: transparent !important;
+        border: none !important;
+    }
+    div[data-testid="stSelectbox"] div[data-baseweb="select"] * { 
+        color: #222222 !important; 
+        font-weight: 500 !important;
+    }
+    
+    /* ========================================= */
+    /* KESİN ÇÖZÜM: KART SEÇENEKLERİ (RADIO)     */
+    /* ========================================= */
+    div[data-testid="stRadio"] div[role="radiogroup"] label { 
+        background-color: #FFFFFF !important; 
+        padding: 16px 20px !important; 
+        border-radius: 8px !important; 
+        margin-bottom: 12px !important; 
         border: 1px solid #EAEAEA !important; 
         border-left: 4px solid #EAEAEA !important; 
         transition: all 0.2s ease-in-out !important; 
-        position: relative !important; 
-        z-index: 10 !important;
+        width: 100% !important;
         display: flex !important;
         align-items: center !important;
     }
-    
-    /* Seçenek yazılarının rengi ve boyutu */
-    div.stRadio > div[role="radiogroup"] > label *,
-    div[data-testid="stRadio"] > div > label *,
-    .stRadio label * { 
+    div[data-testid="stRadio"] div[role="radiogroup"] label * {
         color: #444444 !important; 
         font-weight: 500 !important;
         cursor: pointer !important;
     }
-    
-    /* Üzerine gelince (Hover) oluşan animasyon ve altın rengi efekt */
-    div.stRadio > div[role="radiogroup"] > label:hover,
-    div[data-testid="stRadio"] > div > label:hover,
-    .stRadio label:hover { 
+    div[data-testid="stRadio"] div[role="radiogroup"] label:hover { 
         border-color: #EAEAEA !important; 
         border-left: 4px solid #D2A042 !important; 
         background-color: #FDFBF7 !important; 
