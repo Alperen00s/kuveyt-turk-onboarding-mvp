@@ -42,9 +42,7 @@ st.markdown("""
         z-index: 10;
     }
     
-    /* ========================================= */
-    /* KESİN ÇÖZÜM: FORM BUTONLARI (İleri & Tamamla) */
-    /* ========================================= */
+        * KESİN ÇÖZÜM: FORM BUTONLARI 
     button[kind="primaryFormSubmit"] {
         background: linear-gradient(135deg, #006554 0%, #004C3F 100%) !important;
         border: none !important;
@@ -90,11 +88,8 @@ st.markdown("""
         border-bottom-width: 2px !important;
     }
     
-    /* ========================================= */
-    /* CLOUD İÇİN NÜKLEER ÇÖZÜM (YÜKSEK SPESİFİKLİK) */
-    /* ========================================= */
     
-    /* 1. KESİN ÇÖZÜM: SELECTBOX (AÇILIR MENÜ) */
+    /* SELECTBOX (AÇILIR MENÜ) */
     html body div[data-testid="stSelectbox"] div[data-baseweb="select"] {
         background-color: #FAFAFA !important;
         border: 2px solid #C4C4C4 !important;
@@ -111,7 +106,7 @@ st.markdown("""
         font-weight: 500 !important;
     }
     
-    /* 2. KESİN ÇÖZÜM: RADIO (SEÇENEK KARTLARI) */
+    /*  RADIO (SEÇENEK KARTLARI) */
     html body div[data-testid="stRadio"] label {
         background-color: #FFFFFF !important;
         border: 1px solid #EAEAEA !important;
@@ -193,7 +188,7 @@ if 'step' not in st.session_state:
     st.session_state.step = 1
 
 st.markdown("<h2 style='text-align: center; font-size: 32px; position: relative; z-index: 10;'>KUVEYT TÜRK</h2>", unsafe_allow_html=True)
-st.markdown("<h4 style='text-align: center; color: #D2A042 !important; margin-top: -10px; position: relative; z-index: 10;'>Yeni Nesil Katılım Uygunluk Testi</h4>", unsafe_allow_html=True)
+st.markdown("<h4 style='text-align: center; color: #D2A042 !important; margin-top: -10px; position: relative; z-index: 10;'>Yeni Nesil Yatırım Uygunluk Testi</h4>", unsafe_allow_html=True)
 st.markdown("<hr>", unsafe_allow_html=True)
 st.markdown("<p style='position: relative; z-index: 10;'>SPK tebliğine göre, yatırım kuruluşlarının katılım finans prensiplerine uygun ürün ve hizmetlerin müşteriye uygun olup olmadığını tespit etmek amacıyla uygulamaları gereken testtir.</p>", unsafe_allow_html=True)
 st.markdown("<hr>", unsafe_allow_html=True)
